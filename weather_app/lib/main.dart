@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
   String locationTime = "Day";
   String offset;
 
-  Future getCurrentWeather() async {
+  void getCurrentWeather() async {
     Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
 
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
     timeCalculation();
   }
 
-  Future fetchWeather(String input) async {
+  void fetchWeather(String input) async {
     var searchResult = await http
         .get(Uri.https("api.openweathermap.org", "/data/2.5/weather", {
       "q": input,
