@@ -58,8 +58,8 @@ class _HomePageState extends State<HomePage> {
         this.temp = result['main']['temp'];
         this.offset = (result["timezone"]).toString();
       });
+      timeCalculation();
     }
-    timeCalculation();
   }
 
   void fetchWeather(String input) async {
